@@ -12,13 +12,16 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 FINAL_WIDTH  = 900
 FINAL_HEIGHT = 1200
 
-TITLE_TEXT    = "DOG BOWL (RED)"
-SUBTITLE_TEXT = "Premium non-slip design"
-PRICE_TEXT    = "Best Price: $14.99"
-BUTTON_TEXT   = "BUY NOW"
+TITLE_TEXT    = "Yoga Mat"
+SUBTITLE_TEXT = "Eco-Friendly & Non-Slip"
+PRICE_TEXT    = "$49.99"
 
-INPUT_FOLDER  = "inputs"
+#############################
+INPUT_FOLDER  = "inputs" 
 OUTPUT_FOLDER = "Results"
+#############################
+
+
 
 # Процент площади (от 0.4 до 0.5), который должен занимать продукт
 PRODUCT_AREA_RATIO_MIN = 0.4
@@ -329,26 +332,7 @@ def variant_1(no_bg, avg_color):
     if cur_y >= text_bottom_limit:
         return bg
 
-    # Price
-    pw, ph = draw_text_with_box(
-        draw_obj, PRICE_TEXT, x_center - 200, cur_y, font_price,
-        box_color=None, text_color="black",
-        pad_x=0, pad_y=0, max_width=400
-    )
-    cur_y += ph + 20
-    if cur_y >= text_bottom_limit:
-        return bg
 
-    # Button (не слишком маленькая)
-    btn_font = load_font_bold(font_price.size)
-    bw, bh = draw_button(
-        draw_obj, BUTTON_TEXT,
-        x_center - 200, cur_y,
-        btn_font, bg_color=darken_color(avg_color,0.2),
-        text_color="white", pad_x=60, pad_y=20, max_width=400
-    )
-    cur_y += bh
-    # Если cur_y > text_bottom_limit, в реальном проекте можно ещё что-то делать (уменьшать и т.д.)
 
     return bg
 
@@ -405,22 +389,8 @@ def variant_2(no_bg, avg_color):
     )
     cur_y += sh + 20
 
-    # Price
-    pw, ph = draw_text_with_box(
-        draw_obj, PRICE_TEXT, left_margin, cur_y, font_price,
-        box_color=None, text_color="black",
-        pad_x=0, pad_y=0, max_width=FINAL_WIDTH - 2*left_margin
-    )
-    cur_y += ph + 30
 
-    # Button
-    btn_font = load_font_bold(font_price.size)
-    draw_button(
-        draw_obj, BUTTON_TEXT, left_margin, cur_y,
-        btn_font, bg_color=darken_color(avg_color,0.3), text_color="white",
-        pad_x=60, pad_y=20, max_width=FINAL_WIDTH - 2*left_margin
-    )
-    # cur_y += bh ...
+
     return bg
 
 
@@ -484,14 +454,7 @@ def variant_3(no_bg, avg_color):
     draw_obj.text((price_x, price_y), PRICE_TEXT, fill="black", font=font_price)
 
     # Button
-    btn_font = load_font_bold(font_price.size)
-    btn_y = price_y + pr_h + 20
-    draw_button(
-        draw_obj, BUTTON_TEXT,
-        (FINAL_WIDTH//2) - 200, btn_y,
-        btn_font, bg_color=darken_color(avg_color,0.3),
-        text_color="white", pad_x=60, pad_y=20, max_width=400
-    )
+
 
     return bg
 
@@ -552,21 +515,6 @@ def variant_4(no_bg, avg_color):
     )
     cur_y += sh + 30
 
-    # Price
-    pw, ph = draw_text_with_box(
-        draw_obj, PRICE_TEXT, center_x - 200, cur_y, font_price,
-        box_color=None, text_color="black",
-        pad_x=0, pad_y=0, max_width=400
-    )
-    cur_y += ph + 30
-
-    # Button
-    btn_font = load_font_bold(font_price.size)
-    draw_button(
-        draw_obj, BUTTON_TEXT, center_x - 200, cur_y,
-        btn_font, bg_color=darken_color(avg_color,0.2),
-        text_color="white", pad_x=50, pad_y=15, max_width=400
-    )
 
     return bg
 
@@ -633,15 +581,6 @@ def variant_5(no_bg, avg_color):
     price_y = FINAL_HEIGHT - pr_h - bottom_margin - 120
     draw_obj.text((price_x, price_y), PRICE_TEXT, fill="white", font=font_price)
 
-    # Button
-    btn_font = load_font_bold(font_price.size)
-    btn_y = price_y + pr_h + 20
-    draw_button(
-        draw_obj, BUTTON_TEXT,
-        (FINAL_WIDTH//2) - 200, btn_y,
-        btn_font, bg_color=darken_color(avg_color,0.3),
-        text_color="white", pad_x=50, pad_y=15, max_width=400
-    )
 
     return bg
 
@@ -707,23 +646,6 @@ def variant_6(no_bg, avg_color):
         max_width=500
     )
 
-    price_x = (FINAL_WIDTH - 400) // 2
-    price_y = subtitle_y + 70
-    draw_text_with_box(
-        draw_obj, PRICE_TEXT, price_x, price_y, font_price,
-        box_color=None, text_color="white", pad_x=0, pad_y=0,
-        max_width=400
-    )
-
-    # Button
-    btn_font = load_font_bold(font_price.size)
-    btn_x = (FINAL_WIDTH - 200) // 2
-    btn_y = price_y + 80
-    draw_button(
-        draw_obj, BUTTON_TEXT, btn_x, btn_y, btn_font,
-        bg_color=darken_color(avg_color, 0.3), text_color="white",
-        pad_x=50, pad_y=15, max_width=200
-    )
 
     return bg
 
@@ -780,23 +702,7 @@ def variant_7(no_bg, avg_color):
         max_width=500
     )
 
-    price_x = (FINAL_WIDTH - 400) // 2
-    price_y = subtitle_y + 70
-    draw_text_with_box(
-        draw_obj, PRICE_TEXT, price_x, price_y, font_price,
-        box_color=None, text_color="white", pad_x=0, pad_y=0,
-        max_width=400
-    )
 
-    # Button
-    btn_font = load_font_bold(font_price.size)
-    btn_x = (FINAL_WIDTH - 200) // 2
-    btn_y = price_y + 80
-    draw_button(
-        draw_obj, BUTTON_TEXT, btn_x, btn_y, btn_font,
-        bg_color=lighten_color(avg_color, 0.3), text_color="black",
-        pad_x=50, pad_y=15, max_width=200
-    )
 
     return bg
 
@@ -865,34 +771,8 @@ def variant_8(no_bg, avg_color):
         max_width=500
     )
 
-    # Price (без блока)
-    price_x = (FINAL_WIDTH - 400) // 2
-    price_y = FINAL_HEIGHT - 200
-    draw_text_with_box(
-        draw_obj, PRICE_TEXT, price_x, price_y, font_price,
-        box_color=None, text_color="black", pad_x=0, pad_y=0,
-        max_width=400
-    )
 
-    # Button (с градиентным фоном)
-    btn_font = load_font_bold(font_price.size)
-    btn_x = (FINAL_WIDTH - 200) // 2
-    btn_y = price_y + 80
 
-    # Создаём градиент для кнопки с альфа-каналом
-    btn_bg = create_linear_gradient(200, 60, lighten_color(avg_color, 0.3), darken_color(avg_color, 0.3))
-    btn_bg = btn_bg.convert("RGBA")  # Добавляем альфа-канал
-    alpha = Image.new("L", btn_bg.size, 255)  # Полностью непрозрачный
-    btn_bg.putalpha(alpha)  # Применяем альфа-канал
-
-    # Вставляем кнопку
-    bg.paste(btn_bg, (btn_x, btn_y), btn_bg)
-
-    # Рисуем текст на кнопке
-    draw_button(
-        draw_obj, BUTTON_TEXT, btn_x, btn_y, btn_font,
-        bg_color=None, text_color="white", pad_x=50, pad_y=15, max_width=200
-    )
 
     return bg
 
@@ -968,25 +848,10 @@ def variant_9(no_bg, avg_color):
         [price_x - 20, price_y - 20, price_x + 400 + 20, price_y + 80],
         fill=price_bg_color, radius=20
     )
-    draw_text_with_box(
-        draw_obj, PRICE_TEXT, price_x, price_y, font_price,
-        box_color=None, text_color="black", pad_x=0, pad_y=0,
-        max_width=400
-    )
 
-    # Button (стеклянная панель)
-    btn_font = load_font_bold(font_price.size)
-    btn_x = (FINAL_WIDTH - 200) // 2
-    btn_y = price_y + 100
-    btn_bg_color = (255, 255, 255, 150)
-    draw_obj.rounded_rectangle(
-        [btn_x - 20, btn_y - 10, btn_x + 200 + 20, btn_y + 60],
-        fill=btn_bg_color, radius=20
-    )
-    draw_button(
-        draw_obj, BUTTON_TEXT, btn_x, btn_y, btn_font,
-        bg_color=None, text_color="black", pad_x=50, pad_y=15, max_width=200
-    )
+
+
+
 
     return bg
 
@@ -1071,34 +936,7 @@ def variant_10(no_bg, avg_color):
         max_width=500
     )
 
-    # Price (без блока)
-    price_x = (FINAL_WIDTH - 400) // 2
-    price_y = FINAL_HEIGHT - 200
-    draw_text_with_box(
-        draw_obj, PRICE_TEXT, price_x, price_y, font_price,
-        box_color=None, text_color="black", pad_x=0, pad_y=0,
-        max_width=400
-    )
 
-    # Button (с градиентным фоном)
-    btn_font = load_font_bold(font_price.size)
-    btn_x = (FINAL_WIDTH - 200) // 2
-    btn_y = price_y + 80
-
-    # Создаём градиент для кнопки с альфа-каналом
-    btn_bg = create_linear_gradient(200, 60, lighten_color(avg_color, 0.3), darken_color(avg_color, 0.3))
-    btn_bg = btn_bg.convert("RGBA")  # Добавляем альфа-канал
-    alpha = Image.new("L", btn_bg.size, 255)  # Полностью непрозрачный
-    btn_bg.putalpha(alpha)  # Применяем альфа-канал
-
-    # Вставляем кнопку
-    bg.paste(btn_bg, (btn_x, btn_y), btn_bg)
-
-    # Рисуем текст на кнопке
-    draw_button(
-        draw_obj, BUTTON_TEXT, btn_x, btn_y, btn_font,
-        bg_color=None, text_color="white", pad_x=50, pad_y=15, max_width=200
-    )
 
     return bg
 
@@ -1188,35 +1026,6 @@ def variant_11(no_bg, avg_color):
         draw_obj, SUBTITLE_TEXT, subtitle_x, subtitle_y, font_subtitle,
         box_color=None, text_color="black", pad_x=0, pad_y=0,
         max_width=500
-    )
-
-    # Price (без блока)
-    price_x = (FINAL_WIDTH - 400) // 2
-    price_y = FINAL_HEIGHT - 200
-    draw_text_with_box(
-        draw_obj, PRICE_TEXT, price_x, price_y, font_price,
-        box_color=None, text_color="black", pad_x=0, pad_y=0,
-        max_width=400
-    )
-
-    # Button (с градиентным фоном)
-    btn_font = load_font_bold(font_price.size)
-    btn_x = (FINAL_WIDTH - 200) // 2
-    btn_y = price_y + 80
-
-    # Создаём градиент для кнопки с альфа-каналом
-    btn_bg = create_linear_gradient(200, 60, lighten_color(avg_color, 0.3), darken_color(avg_color, 0.3))
-    btn_bg = btn_bg.convert("RGBA")  # Добавляем альфа-канал
-    alpha = Image.new("L", btn_bg.size, 255)  # Полностью непрозрачный
-    btn_bg.putalpha(alpha)  # Применяем альфа-канал
-
-    # Вставляем кнопку
-    bg.paste(btn_bg, (btn_x, btn_y), btn_bg)
-
-    # Рисуем текст на кнопке
-    draw_button(
-        draw_obj, BUTTON_TEXT, btn_x, btn_y, btn_font,
-        bg_color=None, text_color="white", pad_x=50, pad_y=15, max_width=200
     )
 
     return bg
