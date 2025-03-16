@@ -1,0 +1,33 @@
+0.4.5.5
+xtekky/gpt4free
+版本发布时间: 2025-02-08 02:36:35
+xtekky/gpt4free最新发布版本: 0.4.8.0 (2025-03-07 01:37:55)
+Release Notes
+New Features
+Introduced zerogpu_uuid : A new feature added to the demo, allowing for better identification and tracking in GPU-less environments.
+FluxDev Integration : The G4F provider now supports FluxDev, enhancing the variety of models available for users.
+Improvements
+Enhanced Copy Images API : Improvements made to the Copy Images API for better performance and user experience.
+Updated Webmanifest : The webmanifest has been revised to include the latest features and optimizations.
+Bug Fixes
+Resolved "Show New Window" Button Issue : Fixed a bug that prevented the "Show New Window" button from functioning correctly.
+Exception Handling in Generate Function : Added checks to handle exceptions in the generate function, improving overall stability.
+Commits Overview
+Feb 5, 2025 :
+Added zerogpu_uuid to demo.
+Implemented exception checks in the generate function.
+Feb 6, 2025 :
+Integrated FluxDev into the G4F provider.
+Updated webmanifest and added missing imports.
+Feb 7, 2025 :
+Fixed the "Show New Window" button functionality.
+Merged pull request #2688 and added new models while enhancing provider functionality.
+What's Changed
+Add zerogpu_uuid to demo by @hlohaus in https://github.com/xtekky/gpt4free/pull/2688
+Adding New Models and Enhancing Provider Functionality by @kqlio67 in https://github.com/xtekky/gpt4free/pull/2689
+For a complete comparison of changes, please refer to the commit history here [github.com] .
+相关地址： 原始地址
+下载(tar)
+下载(zip)
+查看： 2025-02-08发行的版本
+MyGit:微信小程序

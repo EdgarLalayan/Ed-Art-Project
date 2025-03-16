@@ -1,0 +1,29 @@
+xtekky/ gpt4free
+0.4.2.5
+g4f v0.4.2.5
+on GitHub
+Release Date : January 25, 2025
+New Features
+OpenaiTemplate Provider : Added support for the OpenaiTemplate provider.
+MiniMax Providers : Introduced MiniMax providers and included them in the model list.
+HailuoAI Provider : Added support for the HailuoAI provider.
+Default Vision Model : Set a default vision model for better consistency.
+Improvements
+Docker Image Update : Updated the base image of the main Docker image for improved performance and compatibility.
+Model Updates : Added MiniMax to models.py to reflect the latest supported models.
+Lock File for nodriver : Added a lock file to ensure proper handling of the nodriver setup.
+Bug Fixes
+Browser Management : Ensured the browser is properly stopped after all calls by adding a finally block.
+Unit Test Fixes : Addressed issues in unit tests for more reliable testing.
+Removals
+Deprecated Webdriver Providers : Removed outdated or unused webdriver providers to streamline functionality.
+by @hlohaus
+Full Changelog : 0.4.2.4...0.4.2.5
+Don't miss a new gpt4free release
+NewReleases is sending notifications on new releases.
+© 2025 NewReleases
+About
+News
+Contact
+Terms of Service
+Privacy Policy

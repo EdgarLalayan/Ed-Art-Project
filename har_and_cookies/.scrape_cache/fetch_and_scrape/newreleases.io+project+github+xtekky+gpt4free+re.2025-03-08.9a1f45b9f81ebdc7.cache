@@ -1,0 +1,26 @@
+xtekky/ gpt4free
+0.4.3.6
+on GitHub
+Release Notes for Version 0.4.3.5
+Date: January 30, 2025
+Commits and Updates:
+Added Features:
+Introduction of the Janus_Pro_7B provider to enhance functionality and user options.
+Improvements:
+Added reasoning capabilities in PerplexityLabs and updated the model list for better accuracy and efficiency.
+Added cookies_to_dict for Copilot to streamline the handling of cookies.
+Bug Fixes:
+Retry Provider script updated to ensure more reliable retry mechanisms.
+Raised MissingAuthError exception for invalid access tokens, ensuring better error handling and user feedback.
+Passed missing DeepSeekAPI import to resolve issues caused by absent dependencies.
+Pull Requests:
+Merged pull request #2643 from hlohaus/demo to incorporate the latest changes and fixes.
+For a detailed view of the changes, please refer to the GitHub comparison page
+Don't miss a new gpt4free release
+NewReleases is sending notifications on new releases.
+© 2025 NewReleases
+About
+News
+Contact
+Terms of Service
+Privacy Policy

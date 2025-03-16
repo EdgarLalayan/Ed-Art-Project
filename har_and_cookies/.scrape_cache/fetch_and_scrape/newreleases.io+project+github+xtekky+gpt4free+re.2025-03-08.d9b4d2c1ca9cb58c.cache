@@ -1,0 +1,33 @@
+xtekky/ gpt4free
+0.4.3.0
+g4f v0.4.3.0
+on GitHub
+Release Notes for Version 0.4.2.7
+Release Date: January 26, 2025
+Highlights
+This release introduces significant enhancements, optimizations, and new features to improve functionality, robustness, and user experience. Special thanks to H Lohaus for their valuable contributions.
+Key Updates and Features
+Enhancements to docker-compose
+Port Update : Added 1337:8080 to docker-compose-slim.yml and docker-compose.yml for enabling new functionalities.
+Improved compatibility and setup flexibility across all running applications.
+Provider Script Improvements
+Refactored and optimized providers such as CablyAI , Cloudflare , and DeepInfraChat to streamline inheritance and logic.
+Introduced use_nodriver attribute for enhanced customization in multiple provider classes.
+Added a format_prompt_qwen2 function to manage new prompt formats in HuggingFace.
+HuggingFaceAPI Enhancements
+Better token handling with added max_tokens and calculate_length functions for accurate token counting and input management.
+Enhanced robustness through improved handling of messages exceeding length limits.
+Streamlined model properties for better management.
+Demo Mode Features
+New demo.html file, complete with supporting CSS and JS, to enable and showcase demo functionalities.
+Updated backend to support demo mode, including functions like create_app_with_gui_and_debug and create_app_with_demo_and_debug .
+Integrated user-journey constraints for better demo tracking and usage monitoring.
+Rate Limiting
+Integrated flask_limiter for API rate limiting in demo mode, improving UI stability under public access.
+Error Handling Enhancements
+Improved edge case management by:
+Ignoring encoding errors in file uploads and web_search .
+Enhancing fault tolerance in processes.
+Code Structure and Robustness
+Numerous refactorings and fixes to improve maintainability, performance, and clarity across the codebase.
+Recommendations for Testing
