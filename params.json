@@ -1,0 +1,93 @@
+{
+    "designe1": {
+        "card1": {
+            "title": {
+                "font": "times-armenian",
+                "text-size": 20,
+                "color": "red",
+                "text": "",
+                "bold": true,
+                "align": "left",
+                "frame-size": {
+                    "width": 100,
+                    "height": 100
+                },
+                "position": {
+                    "x": 10,
+                    "y": 10
+                }
+            },
+            "logo": {
+                "path": "some input",
+                "position": {
+                    "x": 10,
+                    "y": 10
+                },
+                "align": "center",
+                "frame-size": {
+                    "width": 100,
+                    "height": 100
+                }
+            },
+            "product": {
+                "frame-size": {
+                    "width": 100,
+                    "height": 100
+                },
+                "position": {
+                    "x": 10,
+                    "y": 10
+                },
+                "align": "center"
+            }
+        }
+    },
+
+
+
+    "designe2": {
+        "card1": {
+            "title": {
+                "font": "times-armenian",
+                "text-size": 20,
+                "color": "red",
+                "text": "",
+                "bold": true,
+                "align": "left",
+                "frame-size": {
+                    "width": 100,
+                    "height": 100
+                },
+                "position": {
+                    "x": 10,
+                    "y": 10
+                }
+            },
+            "logo": {
+                "path": "some input",
+                "position": {
+                    "x": 10,
+                    "y": 10
+                },
+                "align": "center",
+                "frame-size": {
+                    "width": 100,
+                    "height": 100
+                }
+            },
+            "product": {
+                "frame-size": {
+                    "width": 100,
+                    "height": 100
+                },
+                "position": {
+                    "x": 10,
+                    "y": 10
+                },
+                "align": "center"
+            }
+        }
+
+    }
+
+}
